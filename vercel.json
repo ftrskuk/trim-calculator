@@ -7,16 +7,12 @@
       "config": {
         "distDir": "dist"
       }
-    },
-    {
-      "src": "server/api/ai.ts",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/ai/fill",
-      "dest": "/server/api/ai.ts"
+      "dest": "/api/ai/fill"
     },
     {
       "src": "/(.*)",
