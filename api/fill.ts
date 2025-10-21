@@ -33,7 +33,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         temperature: 0.2,
         response_format: {
           type: 'json_schema',
-          json_schema: {
+          jsonombination: {
             name: 'trim_plan',
             schema: {
               type: 'object',
