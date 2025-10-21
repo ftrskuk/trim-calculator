@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "web/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "server/api/ai.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/ai/fill",
+      "dest": "/server/api/ai.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/web/dist/$1"
+    }
+  ]
+}

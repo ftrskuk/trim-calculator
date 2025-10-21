@@ -2,8 +2,9 @@ import axios from 'axios'
 import { useCallback } from 'react'
 import { buildAiPayload, parseAiResponse, useTrimStore } from '../store/useTrimStore'
 
+// Use relative path for Vercel deployment
 const API_BASE = import.meta.env.VITE_API_BASE?.replace(/\/$/, '') ?? ''
-const AI_ENDPOINT = `${API_BASE}/api/ai/fill`
+const AI_ENDPOINT = API_BASE ? `${API_BASE}/api/ai/fill` : '/api/ai/fill'
 
 export const useAiFill = () => {
   const applyAiPlan = useTrimStore((state) => state.applyAiPlan)
